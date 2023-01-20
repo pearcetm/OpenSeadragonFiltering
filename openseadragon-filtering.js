@@ -81,7 +81,7 @@
                 return;
             }
             var tile = event.tile;
-            var image = event.data || event.image;//use event.data for OpenSeadragon v4.0.0+; fall back to event.image for older versions
+            var image = 'data' in event ? event.data : event.image;//use event.data for OpenSeadragon v4.0.0+; fall back to event.image for older versions
             if (image !== null && image !== undefined) {
                 var canvas = window.document.createElement('canvas');
                 canvas.width = image.width;
