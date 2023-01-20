@@ -86,7 +86,7 @@
                 var canvas = window.document.createElement('canvas');
                 canvas.width = image.width;
                 canvas.height = image.height;
-                var context = canvas.getContext('2d');
+                var context = canvas.getContext('2d',{willReadFrequently: true});
                 context.drawImage(image, 0, 0);
                 tile._renderedContext = context;
                 var callback = event.getCompletionCallback();
