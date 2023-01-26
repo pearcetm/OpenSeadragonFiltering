@@ -131,6 +131,9 @@
 
         function tileDrawingHandler(event) {
             var tile = event.tile;
+            if(!tile.context2d && !tile.cacheImageRecord){
+                console.log('Here! Bad cache!');
+            }
             var rendered = event.rendered;
             if (rendered._filterIncrement === self.filterIncrement) {
                 return;
