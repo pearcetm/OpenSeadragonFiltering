@@ -80,6 +80,7 @@
             if (processors.length === 0) {
                 return;
             }
+            event.getCompletionCallback()();
             var tile = event.tile;
             var image = 'data' in event ? event.data : event.image;//use event.data for OpenSeadragon v4.0.0+; fall back to event.image for older versions
             if (image !== null && image !== undefined) {
