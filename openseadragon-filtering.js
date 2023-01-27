@@ -93,6 +93,9 @@
                 applyFilters(context, processors, callback);
                 tile._filterIncrement = self.filterIncrement;
             }
+            else {
+                console.error('Why is this being called?')
+            }
         }
 
 
