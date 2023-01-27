@@ -80,6 +80,8 @@
             if (processors.length === 0) {
                 return;
             }
+            event.getCompletionCallback()();
+            var callback = null;
             var tile = event.tile;
             var image = 'data' in event ? event.data : event.image;//use event.data for OpenSeadragon v4.0.0+; fall back to event.image for older versions
             if (image !== null && image !== undefined) {
@@ -89,7 +91,7 @@
                 var context = canvas.getContext('2d',{willReadFrequently: true});
                 context.drawImage(image, 0, 0);
                 tile._renderedContext = context;
-                var callback = event.getCompletionCallback();
+                // var callback = event.getCompletionCallback();
                 applyFilters(context, processors, callback);
                 tile._filterIncrement = self.filterIncrement;
             }
